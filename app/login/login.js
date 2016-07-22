@@ -13,18 +13,19 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
     $scope.pass = null;
     $scope.confirm = null;
     $scope.createMode = false;
+    // $scope.createAccount = createAccount;
 
     $scope.login = function(email, pass) {
       $scope.err = null;
       Auth.$signInWithEmailAndPassword(email, pass)
         .then(function(/* user */) {
-          $location.path('/account');
+          $location.path('/');
         }, function(err) {
           $scope.err = errMessage(err);
         });
     };
 
-    $scope.createAccount = function() {
+    function createAccount() {
       $scope.err = null;
       if( assertValidAccountProps() ) {
         var email = $scope.email;

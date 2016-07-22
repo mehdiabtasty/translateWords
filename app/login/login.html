@@ -1,24 +1,24 @@
 
-<h2>Login Page</h2>
+<h2>Translate Words | Login</h2>
 
-<form>
-    <label>
-        <span>email</span>
-        <input type="text" ng-model="email" />
-    </label>
-    <label>
-        <span>password</span>
-        <input type="password" ng-model="pass" />
-    </label>
-    <label ng-cloak ng-show="createMode">
-        <span>confirm pass</span>
-        <input type="password" ng-model="confirm" />
-    </label>
-    <button ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
-    <button ng-click="createMode = true" ng-hide="createMode">Register</button>
-    <button ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
-    <button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+<div class="row">
+        <form class="col s offset-s3">
+            <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Placeholder" id="email" type="email" class="validate" ng-model="email">
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate" ng-model="pass">
+                  <label for="password">Password</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light right" ng-click="login(email, pass)">Log In
+                <i class="material-icons right">send</i>
+            </button>
 
-    <p ng-show="err" class="error">{{err}}</p>
-</form>
+            <p ng-show="err" class="error">{{err}}</p>
+        </form>
+    </div>
+</div>
 

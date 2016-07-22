@@ -7,17 +7,18 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="app.css"/>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body ng-cloak>
 
-  <ul class="menu">
-    <li><a href="#/home">home</a></li>
-    <li><a href="#/chat">chat</a></li>
-    <li ng-hide="loggedIn"><a href="#/login">login</a></li>
-    <li ng-show="loggedIn"><a href="#/account">account</a></li>
+  <ul class="menu" ng-show="loggedIn">
+    <li><a href="#/dashboard">home</a></li>
+    <li><a href="#/account">account</a></li>
+    <li><a href="#/account/logout">logout</a></li>
   </ul>
 
   <div ng-view></div>
@@ -29,10 +30,14 @@
 <script src="//cdn.firebase.com/js/client/2.2.x/firebase.js"></script>
 <script src="//cdn.firebase.com/libs/angularfire/1.0.x/angularfire.min.js"></script>
 -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.9/angular-materialize.min.js"></script>
+
   <script>
   // Initialize Firebase
   var config = {
@@ -56,6 +61,7 @@
   <script src="components/security/security.js"></script>
 
   <script src="home/home.js"></script>
+  <script src="dashboard/dashboard.js"></script>
   <script src="account/account.js"></script>
   <script src="chat/chat.js"></script>
   <script src="login/login.js"></script>

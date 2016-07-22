@@ -3,9 +3,11 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
     'firebase',
+    'ui.materialize',
     'myApp.config',
     'myApp.security',
     'myApp.home',
+    'myApp.dashboard',
     'myApp.account',
     'myApp.chat',
     'myApp.login'
@@ -13,7 +15,7 @@ angular.module('myApp', [
   
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({
-      redirectTo: '/home'
+      redirectTo: '/dashboard'
     });
   }])
   

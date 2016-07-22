@@ -1,4 +1,4 @@
-# angularfire-seed — the seed for Angular+Firebase v3+AngularFire v2
+# TRANSLATE WORDS
 
 UP to date with Firebase SDK v3.0.1 and AngularFire v2.0.1
 

@@ -8,8 +8,8 @@
   angular.module('myApp.security', ['ngRoute', 'firebase.auth', 'myApp.config'])
 
     .config(['$routeProvider', function ($routeProvider) {
-      // routes which are not in our map are redirected to /home
-      //$routeProvider.otherwise({redirectTo: '/home'});
+      // routes which are not in our map are redirected to /dashboard
+      $routeProvider.otherwise({redirectTo: '/dashboard'});
     }])
 
   /**

@@ -1,0 +1,101 @@
+<h2>Dashboard</h2>
+      <table class="striped">
+        <thead>
+          <tr>
+              <th data-field="id">Key</th>
+              <th data-field="English">English</th>
+              <th data-field="French">French</th>
+              <th data-field="Spanish">Spanish</th>
+              <th data-field="Deutch">Deutch</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="(key, value) in translations">
+          <form ng-init="toggleForm = false" ng-submit="toggleForm = false">
+            <td ng-click="toggleForm = true">
+            	<span ng-if="!toggleForm" ng-bind="value.key"></span>
+            	<input ng-if="toggleForm" type="text" ng-model="value.key" ng-change="translations.$save(value)"/>
+            </td>
+            <td ng-click="toggleForm = true">
+            	<span ng-if="!toggleForm" ng-bind="value.values.en"></span>
+            	<input ng-if="toggleForm" type="text" ng-model="value.values.en" ng-change="translations.$save(value)"/>
+            </td>
+            <td ng-click="toggleForm = true">
+            	<span ng-if="!toggleForm" ng-bind="value.values.fr"></span>
+            	<input ng-if="toggleForm" type="text" ng-model="value.values.fr" ng-change="translations.$save(value)"/>
+            </td>
+            <td ng-click="toggleForm = true">
+            	<span ng-if="!toggleForm" ng-bind="value.values.es"></span>
+            	<input ng-if="toggleForm" type="text" ng-model="value.values.es" ng-change="translations.$save(value)"/>
+            </td>
+            <td ng-click="toggleForm = true">
+            	<span ng-if="!toggleForm" ng-bind="value.values.de"></span>
+            	<input ng-if="toggleForm"  type="text" ng-model="value.values.de" ng-change="translations.$save(value)"/>
+            </td>
+          </form>
+          </tr>
+        </tbody>
+      </table>
+      <pagination
+	    page="1"
+	    page-size="10"
+	    total="200"
+	    show-prev-next="true"
+	    use-simple-prev-next="false"
+	    dots="..."
+	    hide-if-empty="false"
+	    adjacent="2"
+	    scroll-top="false"
+	    pagination-action="changePage(page)" />
+<!-- Tools Button -->
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+	<a class="btn-floating btn-large red">
+	  <i class="large material-icons">mode_edit</i>
+	</a>
+	<ul>
+	<!-- Modal add translation Trigger -->
+	  <li><a class="btn-floating blue" href="#addTranslationModale" modal><i class="material-icons">library_add</i></a></li>
+	  <!-- <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+	  <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+	  <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
+	</ul>
+</div>
+<!-- Modal Structure -->
+<div id="addTranslationModale" class="modal">
+    <div class="modal-content">
+        <h4>Add new translation</h4>
+        <p>A bunch of text</p>
+        <div class="row">
+		    <form class="col s12">
+		        <div class="input-field col s12">
+		          <input id="key" type="text" class="validate" ng-model="newtranslation.key">
+		          <label for="key">Key</label>
+		        </div>
+				<div class="row">
+			        <div class="input-field col s6">
+			          <input id="english" type="text" class="validate" ng-model="newtranslation.values.en">
+			          <label for="english">English value</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <input id="french" type="text" class="validate" ng-model="newtranslation.values.fr">
+			          <label for="french">French value</label>
+			        </div>
+				</div>
+				<div class="row">
+			        <div class="input-field col s6">
+			          <input id="spanish" type="text" class="validate" ng-model="newtranslation.values.es">
+			          <label for="spanish">Spanish value</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <input id="deutch" type="text" class="validate" ng-model="newtranslation.values.de">
+			          <label for="deutch">Deutch value</label>
+			        </div>
+				</div>
+		    </form>
+		  </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addTranslation(newtranslation)">Save</a>
+    </div>
+</div>
