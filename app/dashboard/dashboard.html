@@ -12,26 +12,31 @@
 
         <tbody>
           <tr ng-repeat="(key, value) in translations">
-          <form ng-init="toggleForm = false" ng-submit="toggleForm = false">
-            <td ng-click="toggleForm = true">
-            	<span ng-if="!toggleForm" ng-bind="value.key"></span>
-            	<input ng-if="toggleForm" type="text" ng-model="value.key" ng-change="translations.$save(value)"/>
+          <form ng-init="toggleForm.key = false" ng-submit="toggleForm.key = false">
+            <td ng-click="toggleForm.key = true">
+            	<span ng-if="!toggleForm.key" ng-bind="value.key"></span>
+            	<input ng-if="toggleForm.key" type="text" ng-model="value.key" ng-change="translations.$save(value)"/>
             </td>
-            <td ng-click="toggleForm = true">
-            	<span ng-if="!toggleForm" ng-bind="value.values.en"></span>
-            	<input ng-if="toggleForm" type="text" ng-model="value.values.en" ng-change="translations.$save(value)"/>
+            <td ng-click="toggleForm.key = true">
+            	<span ng-if="!toggleForm.key" ng-bind="value.values.en"></span>
+            	<input ng-if="toggleForm.key" type="text" ng-model="value.values.en" ng-change="translations.$save(value)"/>
             </td>
-            <td ng-click="toggleForm = true">
-            	<span ng-if="!toggleForm" ng-bind="value.values.fr"></span>
-            	<input ng-if="toggleForm" type="text" ng-model="value.values.fr" ng-change="translations.$save(value)"/>
+            <td ng-click="toggleForm.key = true">
+            	<span ng-if="!toggleForm.key" ng-bind="value.values.fr"></span>
+            	<input ng-if="toggleForm.key" type="text" ng-model="value.values.fr" ng-change="translations.$save(value)"/>
             </td>
-            <td ng-click="toggleForm = true">
-            	<span ng-if="!toggleForm" ng-bind="value.values.es"></span>
-            	<input ng-if="toggleForm" type="text" ng-model="value.values.es" ng-change="translations.$save(value)"/>
+            <td ng-click="toggleForm.key = true">
+            	<span ng-if="!toggleForm.key" ng-bind="value.values.es"></span>
+            	<input ng-if="toggleForm.key" type="text" ng-model="value.values.es" ng-change="translations.$save(value)"/>
             </td>
-            <td ng-click="toggleForm = true">
-            	<span ng-if="!toggleForm" ng-bind="value.values.de"></span>
-            	<input ng-if="toggleForm"  type="text" ng-model="value.values.de" ng-change="translations.$save(value)"/>
+            <td ng-click="toggleForm.key = true">
+            	<span ng-if="!toggleForm.key" ng-bind="value.values.de"></span>
+            	<input ng-if="toggleForm.key"  type="text" ng-model="value.values.de" ng-change="translations.$save(value)"/>
+            </td>
+            <td ng-if="toggleForm.key">
+            	<button class="btn waves-effect waves-light right" ng-click="toggleForm.key = false">Save
+	                <i class="material-icons right">launch</i>
+	            </button>
             </td>
           </form>
           </tr>
