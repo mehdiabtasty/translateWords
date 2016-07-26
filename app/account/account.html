@@ -1,57 +1,61 @@
+<h4 class="right-align blue-grey-text">Account</h4>
+<div class="row">
+    <div class="col s12 m4">
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+            <span class="card-title">Profile</span>
+            <div>
+                <span>Name:</span>
+                <input type="text" name="name" ng-model="profile.name"/>
+            </div>
+        </div>
+        <div class="card-action">
+          <a class="right-align">Save</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+            <span class="card-title">Change Password</span>
+            <div>
+                <span>Old Password:</span>
+                <input type="password" ng-keypress="clear()" ng-model="oldpass"/>
+            </div>
 
-<h2>Account</h2>
+            <div>
+                <span>New Password:</span>
+                <input type="password" ng-keypress="clear()" ng-model="newpass"/>
+            </div>
 
-<form>
-    <fieldset>
-        <legend>Profile</legend>
+            <div>
+                <span>Confirm New Password:</span>
+                <input type="password" ng-keypress="clear()" ng-model="confirm"/>
+            </div>
 
-        <label>
-            <span>Name:</span>
-            <input type="text" name="name" ng-model="profile.name"/>
-        </label>
-    </fieldset>
-</form>
+            <p class="error" ng-show="err">{{err}}</p>
+            <p class="good" ng-show="msg">{{msg}}</p>
+        </div>
+        <div class="card-action">
+          <a class="right-align" ng-click="changePassword(oldpass, newpass, confirm)">Change password</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+            <span class="card-title">Change Email</span>
+            <div>
+                <span>New Email:</span>
+                <input type="text" ng-keypress="clear()" ng-model="newEmail"/>
+            </div>
 
-<form>
-    <fieldset>
-        <legend>Change Password</legend>
-
-        <label>
-            <span>Old Password:</span>
-            <input type="password" ng-keypress="clear()" ng-model="oldpass"/>
-        </label>
-
-        <label>
-            <span>New Password:</span>
-            <input type="password" ng-keypress="clear()" ng-model="newpass"/>
-        </label>
-
-        <label>
-            <span>Confirm New Password:</span>
-            <input type="password" ng-keypress="clear()" ng-model="confirm"/>
-        </label>
-
-        <button ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
-
-        <p class="error" ng-show="err">{{err}}</p>
-        <p class="good" ng-show="msg">{{msg}}</p>
-    </fieldset>
-</form>
-
-<form>
-    <fieldset>
-        <legend>Change Email</legend>
-
-        <label>
-            <span>New Email:</span>
-            <input type="text" ng-keypress="clear()" ng-model="newEmail"/>
-        </label>
-
-        <button ng-click="changeEmail(newEmail)">update email</button>
-
-        <p class="error" ng-show="emailerr">{{emailerr}}</p>
-        <p class="good" ng-show="emailmsg">{{emailmsg}}</p>
-    </fieldset>
-</form>
-
-<button ng-click="logout()">Log Out</button>
+            <p class="error" ng-show="emailerr">{{emailerr}}</p>
+            <p class="good" ng-show="emailmsg">{{emailmsg}}</p>
+        </div>
+        <div class="card-action">
+          <a class="right-align" ng-click="changeEmail(newEmail)">update email</a>
+        </div>
+      </div>
+    </div>
+  </div>

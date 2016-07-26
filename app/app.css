@@ -45,7 +45,7 @@ p.status.good, p.good {
    color: green;
 }
 
-form label {
+/*form label {
    display: block;
    margin: 15px 0;
 }
@@ -54,16 +54,16 @@ form label span {
    display: block;
    font-weight: bold;
 }
-
+*/
 .error {
    color: red;
 }
-
+/*
 fieldset {
    float: left;
    margin-right: 25px;
    padding: 25px;
-}
+}*/
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
